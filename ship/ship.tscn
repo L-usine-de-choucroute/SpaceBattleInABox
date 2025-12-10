@@ -10,3 +10,4 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("1_jgjpc")
+offset = Vector2(0, -80)
