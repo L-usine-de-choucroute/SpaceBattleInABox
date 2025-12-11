@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm33l22mpfkha"
-path="res://.godot/imported/alien-ship-icon.png-e4ee220ccbf9926201a158782f8bf155.ctex"
+uid="uid://b1mor0j2jqg2c"
+path="res://.godot/imported/cruiser.png-13ba0732896842deec153a14cce31457.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ship/alien-ship-icon.png"
-dest_files=["res://.godot/imported/alien-ship-icon.png-e4ee220ccbf9926201a158782f8bf155.ctex"]
+source_file="res://ship/cruiser.png"
+dest_files=["res://.godot/imported/cruiser.png-13ba0732896842deec153a14cce31457.ctex"]
 
 [params]
 

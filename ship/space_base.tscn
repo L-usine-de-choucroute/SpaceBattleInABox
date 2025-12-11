@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwutrmtuswa7h"]
+
+[ext_resource type="Script" uid="uid://dgj1q1fu8hxug" path="res://ship/ship.gd" id="1_a0cav"]
+[ext_resource type="Texture2D" uid="uid://bmkv6ryrbsi75" path="res://ship/spacebase.png" id="1_b1btk"]
+
+[node name="SpaceBase" type="Sprite2D"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_b1btk")
+offset = Vector2(0, -10)
+script = ExtResource("1_a0cav")
+metadata/_custom_type_script = "uid://dgj1q1fu8hxug"

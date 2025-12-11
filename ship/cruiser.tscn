@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://epy3my2v3nsu"]
+
+[ext_resource type="Texture2D" uid="uid://b1mor0j2jqg2c" path="res://ship/cruiser.png" id="1_3u21q"]
+[ext_resource type="Script" uid="uid://dgj1q1fu8hxug" path="res://ship/ship.gd" id="2_5c1vw"]
+
+[node name="Cruiser" type="Sprite2D"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_3u21q")
+script = ExtResource("2_5c1vw")
+metadata/_custom_type_script = "uid://dgj1q1fu8hxug"

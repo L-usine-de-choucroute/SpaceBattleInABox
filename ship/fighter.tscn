@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ige27nt6l60m"]
+
+[ext_resource type="Texture2D" uid="uid://c3e727fcks14r" path="res://ship/fighter.png" id="1_40m2f"]
+[ext_resource type="Script" uid="uid://dgj1q1fu8hxug" path="res://ship/ship.gd" id="2_x3qdn"]
+
+[node name="Fighter" type="Sprite2D"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_40m2f")
+script = ExtResource("2_x3qdn")
+metadata/_custom_type_script = "uid://dgj1q1fu8hxug"

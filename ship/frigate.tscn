@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbih8vrymk7yi"]
+
+[ext_resource type="Texture2D" uid="uid://bdrv1fujc4fs7" path="res://ship/frigate.png" id="1_snjfm"]
+[ext_resource type="Script" uid="uid://dgj1q1fu8hxug" path="res://ship/ship.gd" id="2_m8ks3"]
+
+[node name="Frigate" type="Sprite2D"]
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("1_snjfm")
+script = ExtResource("2_m8ks3")
+metadata/_custom_type_script = "uid://dgj1q1fu8hxug"

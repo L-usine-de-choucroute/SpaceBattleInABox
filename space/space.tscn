@@ -1,15 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcf68cgqy7yg"]
+[gd_scene load_steps=8 format=3 uid="uid://dcf68cgqy7yg"]
 
 [ext_resource type="Script" uid="uid://c435jwylo6bff" path="res://space/space.gd" id="1_bv8oe"]
-[ext_resource type="PackedScene" uid="uid://cc5qh7s63ja10" path="res://ship/ship.tscn" id="2_b4b4b"]
+[ext_resource type="PackedScene" uid="uid://bwutrmtuswa7h" path="res://ship/space_base.tscn" id="2_bv8oe"]
+[ext_resource type="PackedScene" uid="uid://epy3my2v3nsu" path="res://ship/cruiser.tscn" id="3_4mno5"]
 [ext_resource type="PackedScene" uid="uid://be0kuuecfd2o" path="res://space_layer/space_layer.tscn" id="3_mk1j7"]
 [ext_resource type="PackedScene" uid="uid://ccekykctwsbov" path="res://space_edge/space_edge.tscn" id="4_4mno5"]
+[ext_resource type="PackedScene" uid="uid://bbih8vrymk7yi" path="res://ship/frigate.tscn" id="4_mox78"]
+[ext_resource type="PackedScene" uid="uid://ige27nt6l60m" path="res://ship/fighter.tscn" id="5_qjoko"]
 
 [node name="Space" type="Node2D"]
 script = ExtResource("1_bv8oe")
 
-[node name="Ship" parent="." instance=ExtResource("2_b4b4b")]
-z_index = 9
+[node name="SpaceBase" parent="." instance=ExtResource("2_bv8oe")]
+
+[node name="Cruiser" parent="." instance=ExtResource("3_4mno5")]
+
+[node name="Frigate1" parent="." instance=ExtResource("4_mox78")]
+
+[node name="Frigate0" parent="." instance=ExtResource("4_mox78")]
+
+[node name="Fighter" parent="." instance=ExtResource("5_qjoko")]
 
 [node name="SpaceLayer4" parent="." instance=ExtResource("3_mk1j7")]
 visible = false
