@@ -46,9 +46,14 @@ position = Vector2(0, 240)
 layer_level = 1
 
 [node name="SpaceLayer0" parent="." instance=ExtResource("3_mk1j7")]
+visible = false
 position = Vector2(0, 300)
 
 [node name="SpaceEdge" parent="." instance=ExtResource("4_4mno5")]
 z_index = -1
 
+[connection signal="cell_clicked" from="SpaceLayer4" to="." method="_on_space_layer_cell_clicked"]
+[connection signal="cell_clicked" from="SpaceLayer3" to="." method="_on_space_layer_cell_clicked"]
+[connection signal="cell_clicked" from="SpaceLayer2" to="." method="_on_space_layer_cell_clicked"]
+[connection signal="cell_clicked" from="SpaceLayer1" to="." method="_on_space_layer_cell_clicked"]
 [connection signal="cell_clicked" from="SpaceLayer0" to="." method="_on_space_layer_cell_clicked"]

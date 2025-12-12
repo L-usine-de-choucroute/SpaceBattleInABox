@@ -12,19 +12,20 @@ const layer_size := 5
 var selected_cell = null
 @onready var global_to_local_position_transform := get_global_transform_with_canvas()
 
-func _input(event):
+func _unhandled_input(event: InputEvent):
 	if (!visible): return
-	if event is InputEventMouseMotion:
-		var target_cell = get_cell_for_global_position(event.position)
-		update_selected_cell(target_cell)
-	if event is InputEventMouseButton:
-		var target_cell = get_cell_for_global_position(event.position)
-		if (is_cell_in_layer_bounds(target_cell)):
-			cell_clicked.emit(layer_level, target_cell)
+	if event is InputEventMouseMotion: on_mouse_motion(event)
+	if event.is_action_pressed("select"): on_select_input(event)
 
-func update_selected_cell_at_position(_position: Vector2i):
-	var target_cell = local_to_map(_position)
+func on_mouse_motion(event: InputEventMouseMotion):
+	var target_cell = get_cell_for_global_position(event.position)
+	if (!is_cell_in_layer_bounds(target_cell)): return
 	update_selected_cell(target_cell)
+
+func on_select_input(event: InputEvent):
+	var target_cell = get_cell_for_global_position(event.position)
+	if (!is_cell_in_layer_bounds(target_cell)): return
+	cell_clicked.emit(layer_level, target_cell)
 
 func get_cell_for_global_position(_global_position: Vector2) -> Vector2i:
 	var local_position = global_to_local_position(_global_position)
@@ -36,17 +37,15 @@ func global_to_local_position(_global_position: Vector2) -> Vector2:
 func update_selected_cell(target_cell: Vector2i):
 	if (target_cell != selected_cell):
 		if (selected_cell != null):
-			unselect_cell()
-			selected_cell = null
-		if (is_cell_in_layer_bounds(target_cell)):
-			select_cell(target_cell)
-			selected_cell = target_cell
+			unselect_cell(selected_cell)
+		select_cell(target_cell)
+		selected_cell = target_cell
 
 func select_cell(cell: Vector2i):
 	set_cell(cell, tile_set_id, selected_tile_id, 0)
 
-func unselect_cell():
-	set_cell(selected_cell, tile_set_id, unselected_tile_id, 0)
+func unselect_cell(cell: Vector2i):
+	set_cell(cell, tile_set_id, unselected_tile_id, 0)
 
 func is_cell_in_layer_bounds(cell: Vector2i) -> bool:
 	return cell.x >= 0 and cell.x < layer_size and cell.y >= 0 and cell.y < layer_size
