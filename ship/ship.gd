@@ -5,3 +5,15 @@ class_name Ship
 func set_at_position(layer: int, pos: Vector2):
 	position = pos
 	z_index = 2 * layer + 1
+
+func focus():
+	self_modulate.a = 1
+
+func unfocus():
+	self_modulate.a = 0.5
+
+func update_focus(isFocus: bool):
+	if (isFocus):
+		focus()
+	else:
+		unfocus()
