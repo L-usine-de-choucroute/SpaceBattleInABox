@@ -2,11 +2,17 @@ extends Node
 
 class_name Space
 
-@onready var space_base: Ship = $SpaceBase
-@onready var cruiser: Ship = $Cruiser
-@onready var frigate0: Ship = $Frigate0
-@onready var frigate1: Ship = $Frigate1
-@onready var fighter: Ship = $Fighter
+@onready var player1_space_base: Ship = $Player1_SpaceBase
+@onready var player1_cruiser: Ship = $Player1_Cruiser
+@onready var player1_frigate0: Ship = $Player1_Frigate0
+@onready var player1_frigate1: Ship = $Player1_Frigate1
+@onready var player1_fighter: Ship = $Player1_Fighter
+
+@onready var player2_space_base: Ship = $Player2_SpaceBase
+@onready var player2_cruiser: Ship = $Player2_Cruiser
+@onready var player2_frigate0: Ship = $Player2_Frigate0
+@onready var player2_frigate1: Ship = $Player2_Frigate1
+@onready var player2_fighter: Ship = $Player2_Fighter
 
 var selected_layer := 0
 @onready var layers: Array[Space_Layer] = [
@@ -21,11 +27,17 @@ var ships_location: Ships_Location = load("uid://bpaamibusrgmd").new()
 
 func _ready():
 	select_layer(selected_layer)
-	add_ship(space_base, 0, Vector2i(0, 0))
-	add_ship(cruiser, 0, Vector2i(1, 0))
-	add_ship(frigate0, 0, Vector2i(0, 1))
-	add_ship(frigate1, 0, Vector2i(2, 0))
-	add_ship(fighter, 0, Vector2i(0, 2))
+	add_ship(player1_space_base, 0, Vector2i(0, 0))
+	add_ship(player1_cruiser, 0, Vector2i(1, 0))
+	add_ship(player1_frigate0, 0, Vector2i(0, 1))
+	add_ship(player1_frigate1, 0, Vector2i(2, 0))
+	add_ship(player1_fighter, 0, Vector2i(0, 2))
+	
+	add_ship(player2_space_base, 0, Vector2i(4, 4))
+	add_ship(player2_cruiser, 0, Vector2i(3, 4))
+	add_ship(player2_frigate0, 0, Vector2i(4, 3))
+	add_ship(player2_frigate1, 0, Vector2i(2, 4))
+	add_ship(player2_fighter, 0, Vector2i(4, 2))
 
 func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("switch_layer_up"): switch_to_layer_up()

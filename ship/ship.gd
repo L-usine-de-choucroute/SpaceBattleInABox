@@ -10,7 +10,7 @@ func focus():
 	self_modulate.a = 1
 
 func unfocus():
-	self_modulate.a = 0.5
+	self_modulate.a = 0.25
 
 func update_focus(isFocus: bool):
 	if (isFocus):

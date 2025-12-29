@@ -11,15 +11,31 @@
 [node name="Space" type="Node2D"]
 script = ExtResource("1_bv8oe")
 
-[node name="SpaceBase" parent="." instance=ExtResource("2_bv8oe")]
+[node name="Player1_SpaceBase" parent="." instance=ExtResource("2_bv8oe")]
 
-[node name="Cruiser" parent="." instance=ExtResource("3_4mno5")]
+[node name="Player1_Cruiser" parent="." instance=ExtResource("3_4mno5")]
 
-[node name="Frigate1" parent="." instance=ExtResource("4_mox78")]
+[node name="Player1_Frigate1" parent="." instance=ExtResource("4_mox78")]
 
-[node name="Frigate0" parent="." instance=ExtResource("4_mox78")]
+[node name="Player1_Frigate0" parent="." instance=ExtResource("4_mox78")]
 
-[node name="Fighter" parent="." instance=ExtResource("5_qjoko")]
+[node name="Player1_Fighter" parent="." instance=ExtResource("5_qjoko")]
+
+[node name="Player2_SpaceBase" parent="." instance=ExtResource("2_bv8oe")]
+self_modulate = Color(0.5, 0, 0, 1)
+scale = Vector2(0.24, 0.24)
+
+[node name="Player2_Cruiser" parent="." instance=ExtResource("3_4mno5")]
+self_modulate = Color(0.5, 0, 0, 1)
+
+[node name="Player2_Frigate0" parent="." instance=ExtResource("4_mox78")]
+self_modulate = Color(0.5, 0, 0, 1)
+
+[node name="Player2_Frigate1" parent="." instance=ExtResource("4_mox78")]
+self_modulate = Color(0.5, 0, 0, 1)
+
+[node name="Player2_Fighter" parent="." instance=ExtResource("5_qjoko")]
+self_modulate = Color(0.5, 0, 0, 1)
 
 [node name="SpaceLayer4" parent="." instance=ExtResource("3_mk1j7")]
 z_index = 8
